@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <!-- Feito por um Parente. -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ctrl+Alt+Die</title>
+  <link rel="icon" href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941abbbd2cc89b855ba9ae5/275afce9f_logo.png" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+/* === FUNDO CYBER GRID MAIS CLARO === */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size:64px 64px;
+  animation:gridMove 60s linear infinite;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes gridMove{
+  from{background-position:0 0,0 0}
+  to{background-position:512px 512px,512px 512px}
+}
+
+/* === GLITCH OCASIONAL === */
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;opacity:0}
+.glitch::before{color:#22d3ee;transform:translate(-2px,0)}
+.glitch::after{color:#fb7185;transform:translate(2px,0)}
+.glitch-active::before{opacity:.8;animation:glitchTop .4s steps(2,end)}
+.glitch-active::after{opacity:.8;animation:glitchBottom .35s steps(2,end)}
+
+section{position:relative;z-index:1}
+</style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+<!-- HERO -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+
+  <!-- STATUS -->
+  <div class="mb-8 px-6 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 flex items-center gap-3 font-mono text-sm">
+    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+    <span class="text-purple-300">SYSTEM.STATUS: CHAOTIC</span>
+  </div>
+
+  <h1 class="text-7xl md:text-9xl font-extrabold tracking-tight relative">
+    <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent glitch" data-text="Ctrl+Alt+Die">Ctrl+Alt+Die</span>
+  </h1>
+
+  <!-- QUOTE DINÂMICA (ELEMENTO QUE FALTAVA) -->
+  <p id="quote" class="mt-6 text-xl text-gray-400 font-mono min-h-[1.5em] transition-all duration-700 opacity-100 blur-0"></p>
+
+  <div class="flex gap-4 mt-12 flex-col sm:flex-row">
+    <a href="#games" class="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 font-bold">
+       <img src="https://img.icons8.com/?size=30&id=gp2EGUQ15At9&format=png&color=000000"/>Ver Nossos "Jogos"
+    </a>
+    <a href="#contact" class="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 border border-gray-700">
+      <img src="https://img.icons8.com/?size=30&id=okvpqeYbG0xb&format=png&color=000000"> Reclamar Conosco
+    </a>
+  </div>
+
+  <div class="absolute bottom-10 text-gray-500 animate-bounce">⌄</div>
+</section>
+
+<!-- GAMES -->
+<section id="games" class="py-32 px-4 max-w-6xl mx-auto">
+  <h2 class="text-6xl font-extrabold text-center mb-16">Nossos <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Projetos</span></h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden">
+      <div class="h-40 bg-gradient-to-br from-red-600 to-orange-600"></div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold">Death.exe</h3>
+        <p class="text-gray-400 mt-2">Um roguelike onde você morre. Muito.</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden">
+      <div class="h-40 bg-gradient-to-br from-green-600 to-emerald-600"></div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold">Bug Simulator</h3>
+        <p class="text-gray-400 mt-2">Sobreviva até a próxima sprint.</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden">
+      <div class="h-40 bg-gradient-to-br from-purple-600 to-pink-600"></div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold">Caffeine Crisis</h3>
+        <p class="text-gray-400 mt-2">Startup, café e decisões ruins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- CONTACT -->
+<section id="contact" class="py-32 px-4 max-w-3xl mx-auto text-center">
+  <p class="text-yellow-500 font-mono mb-3">// PROMETO LER DEPOIS</p>
+  <h2 class="text-6xl font-extrabold mb-4 text-yellow-400">Contato</h2>
+  <p class="text-gray-400 mb-12">Quer gritar conosco? Sugerir features? Reportar bugs?<br>Vamos ignorar tudo igualmente!</p>
+
+  <!-- EMAIL CARD -->
+  <div class="mb-12 rounded-2xl p-10 bg-gradient-to-br from-purple-900/70 to-pink-900/60 border border-purple-500/30 shadow-2xl">
+    <div class="flex justify-center mb-4"><i data-lucide="mail" class="w-10 text-purple-300"></i></div>
+    <p class="text-gray-300 mb-2">Mande sua reclamação para:</p>
+    <a href="mailto:ctrlaltdie@duck.com" class="block text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent tracking-wide">ctrlaltdie@duck.com</a>
+    <p class="text-gray-500 text-sm mt-3 font-mono">Tempo médio de resposta: quando lembrarmos</p>
+  </div>
+
+  <!-- FORM -->
+  <form class="space-y-8 text-left">
+    <div>
+      <label class="block text-gray-400 font-mono mb-2">// seu_nome</label>
+      <input class="w-full bg-gray-900/70 border border-gray-700 p-4 rounded-xl placeholder-gray-600" placeholder="Como devemos te ignorar?" />
+    </div>
+
+    <div>
+      <label class="block text-gray-400 font-mono mb-2">// seu_email</label>
+      <input class="w-full bg-gray-900/70 border border-gray-700 p-4 rounded-xl placeholder-gray-600" placeholder="Para onde mandamos a newsletter que você não pediu" />
+    </div>
+
+    <div>
+      <label class="block text-gray-400 font-mono mb-2">// sua_mensagem</label>
+      <textarea class="w-full bg-gray-900/70 border border-gray-700 p-4 rounded-xl placeholder-gray-600 min-h-[140px]" placeholder="Desabafe aqui. Ninguém vai ler mesmo..."></textarea>
+    </div>
+
+    <button class="w-full py-5 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 font-extrabold text-black text-lg">Enviar para o Void</button>
+  </form>
+</section>
+
+<footer class="border-t border-gray-900 py-10 text-center text-gray-500 font-mono">
+  © 2024 Ctrl+Alt+Die — Todos os bugs reservados
+</footer>
+
+<script>
+// GLITCH OCASIONAL
+setInterval(()=>{
+  document.querySelectorAll('.glitch').forEach(el=>{
+    el.classList.add('glitch-active')
+    setTimeout(()=>el.classList.remove('glitch-active'),400)
+  })
+},6000+Math.random()*4000)
+
+// FRASES ROTATIVAS (AGORA COM ELEMENTO EXISTENTE)
+const quotes = [
+  "Fazendo jogos que ninguém pediu desde 2019",
+  "Nosso código funciona. Às vezes.",
+  "QA é só uma sugestão",
+  "Bugs são features não documentadas",
+  "Dormimos quando o jogo lança... nunca"
+];
+
+let i = 0;
+const el = document.getElementById('quote');
+el.textContent = quotes[0];
+
+setInterval(() => {
+  el.classList.add('opacity-0','blur-sm');
+  setTimeout(()=>{
+    i = (i + 1) % quotes.length;
+    el.textContent = quotes[i];
+    el.classList.remove('opacity-0','blur-sm');
+  },500);
+}, 4500);
+
+lucide.createIcons();
+
+// PARALLAX LEVE NO CARD DE CONTATO
+const card = document.getElementById('contactCard');
+document.addEventListener('mousemove',e=>{
+  const x = (window.innerWidth/2 - e.clientX)/40;
+  const y = (window.innerHeight/2 - e.clientY)/40;
+  card.style.transform = `translate(${x}px,${y}px)`;
+});
+</script>
+</body>
+</html>
+
+
+<!--PotassiumNuke-->
